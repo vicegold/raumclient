@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <title>raumclient</title>      
+    <link rel="stylesheet" href="css/layout.main.css">
+    <link rel="stylesheet" href="css/app.animations.css">
+  </head>
+  <body>
+
+    <div class="mainContainer">
+      <!-- toolbar container with a fixed width which contains some menues and some informations -->
+      <div class="toolbarContainer" id="toolbarContainer">        
+        <comp-raumclient-toolbar id="toolbar" windowstate="normal"></comp-raumclient-toolbar>
+      </div>
+      <!-- main container for the app and different views itself -->
+      <div class="viewContainer" id="viewContainer">
+        <!-- main views -->
+        <comp-raumclient-view-controlcenter></comp-raumclient-view-controlcenter>
+        <!-- loading overlay when system is not ready, it will overlay the application view-->
+        <comp-loadingOverlay id="viewOverlay" image="assets/images/raumfeldLogo.png"></comp-loadingOverlay>
+      </div>
+      <!-- inspector container for inspecting stuff -->
+      <div class="inspectorContainer" id="inspectorContainer">
+        <comp-raumclient-inspector id="inspector"></comp-raumclient-inspector>
+      </div>
+    </div>  
+
+    <script type='module' src='components/comp.image/comp.image.js'></script> 
+    <script type='module' src='components/comp.logviewer/comp.logviewer.js'></script>
+    <script type='module' src='components/comp.loadingoverlay/comp.loadingoverlay.js'></script>
+    <script type='module' src='components/comp.music.nowPlaying/comp.music.nowPlaying.js'></script>    
+    <script type='module' src='components/comp.music.transitionControl/comp.music.transitionControl.js'></script>   
+    <script type='module' src='components/comp.raumclient.toolbar/comp.raumclient.toolbar.js'></script>
+    <script type='module' src='components/comp.raumclient.inspector/comp.raumclient.inspector.js'></script>  
+    <script type='module' src='components/comp.raumclient.views/comp.raumclient.view.controlCenter.js'></script>  
+    <script src='js/app.raumclient.js'></script>
+    <script>
+    
+      var app = null
+
+      // add global error catching before doeing anything fancy
+      window.onerror = function(msg, url, line, col, error) {
+        alert("Error: " + msg + "\nurl: " + url + "\nline: " + line + "\nerror: " + error )
+        return true
+      }
+
+      // create main global app variable and start the application when the DOM was loaded
+      document.addEventListener("DOMContentLoaded", function(event) {
+        app = new AppRaumclient()
+        app.init().catch(function(_e){
+          alert("Error loading localization: " + _e.toString() )
+          app.quit()
+        })
+      });   
+
+    </script> 
+
+  </body>
+</html>

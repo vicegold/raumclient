@@ -1,0 +1,38 @@
+{
+    // Verwendet IntelliSense zum Ermitteln möglicher Attribute.
+    // Zeigen Sie auf vorhandene Attribute, um die zugehörigen Beschreibungen anzuzeigen.
+    // Weitere Informationen finden Sie unter https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "nwjs",
+            "request": "launch",
+            "name": "Launch NWJS",
+            "webRoot": "${workspaceFolder}\\src",
+            "nwjsVersion" : "0.28.0"
+        },
+        {
+            "type": "nwjs",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}\\src",
+            "nwjsVersion" : "0.28.0"
+        },
+        {
+            "name": "Launch Chrome",
+            "type": "chrome",
+            "request": "launch",
+            "webRoot": "${workspaceRoot}\\src", //where you put your .js files
+            "runtimeExecutable": "D:\\Develop\\NwJs\\bin\\nwjs-v0.28.0-win-x64\\nw.exe",
+            "runtimeArgs": [
+                "${workspaceRoot}",
+                "--chrome-remote-port=9222"
+            ],
+            "sourceMaps": false,
+            "diagnosticLogging": true,
+            "port": 9222
+        },
+    ]
+}

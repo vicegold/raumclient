@@ -1,0 +1,14 @@
+{
+  "name": "raumclient",
+  "main": "index.html",
+  "window": {     
+    "frame" : false,   
+    "toolbar": false,     
+    "min_width": 1000,
+    "min_height": 600
+  },
+  "keywords": [
+    "raumclient",
+    "raumfeld"
+  ]
+}

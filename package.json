@@ -1,0 +1,19 @@
+{
+  "name": "raumclient",
+  "version": "0.0.1",
+  "description": "",
+  "repository": "https://github.com/ChriD/raumclient",
+  "keywords": [
+    "raumclient",
+    "raumfeld"
+  ],
+  "author": "ChriD",
+  "license": "",
+  "devDependencies": {},
+  "dependencies": {
+    "config": "^1.26.1",
+    "i18next": "^10.3.0",
+    "i18next-node-fs-backend": "^1.0.0",
+    "node-raumkernel": "^1.2.4"
+  }
+}

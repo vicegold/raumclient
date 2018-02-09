@@ -25,6 +25,7 @@
       </div>
     </div>  
 
+    <script type='module' src='components/comp.base.view/comp.base.view.js'></script>  
     <script type='module' src='components/comp.image/comp.image.js'></script> 
     <script type='module' src='components/comp.logviewer/comp.logviewer.js'></script>
     <script type='module' src='components/comp.loadingoverlay/comp.loadingoverlay.js'></script>
@@ -56,6 +57,11 @@
         return true
       }
 
+      // catch component errors
+      document.addEventListener("comp-error", function(_e) {
+        alert("Error: " + _e.toString() )
+      })
+
       // create main global app variable and start the application when the DOM was loaded
       document.addEventListener("DOMContentLoaded", function(event) {
         app = new AppRaumclient()
@@ -63,7 +69,12 @@
           alert("Error loading localization: " + _e.toString() )
           app.quit()
         })
-      });   
+      })  
+      
+      // global label function
+      function label(_label){
+        return app.label(_label)
+      }
 
     </script> 
 

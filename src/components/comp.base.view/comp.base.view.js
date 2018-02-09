@@ -31,4 +31,17 @@ export class ComponentBaseView extends HTMLElement {
     return "";
   }
 
+  error(_e) {  
+    var event = new CustomEvent("comp-error", _e)
+    document.dispatchEvent(event)
+  }
+
+  label(_label) {
+    if(app.label && app.label === "function")
+      return app.label(_label)
+    if(label && label === "function")
+      return label(_label)
+    return _label
+  }
+
 }

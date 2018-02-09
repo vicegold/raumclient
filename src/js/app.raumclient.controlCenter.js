@@ -31,9 +31,9 @@ class AppRaumclient_ControlCenter extends RaumkernelLib.Base
     }
 
 
-    combinedZoneDataChanged(_zoneData)
+    combinedZoneStateChanged(_zoneState)
     {
-        this.elementZoneSelector.setZoneData(_zoneData)
+        this.elementZoneSelector.setZoneData(_zoneState)
     }
 
     updateAlbumArtBackgroundView() 

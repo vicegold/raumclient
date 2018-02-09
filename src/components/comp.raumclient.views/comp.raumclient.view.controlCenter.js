@@ -2,10 +2,10 @@
  * ChriD 26.01.2018  
  */
 
-import {ComponentBase} from '../comp.base/comp.base.polymer.js';
+import {ComponentBaseView} from '../comp.base.view/comp.base.view.js';
 
 
-export class Component_Raumclient_View_Controlcenter extends ComponentBase {
+export class Component_Raumclient_View_Controlcenter extends ComponentBaseView {
  
   constructor() {     
     super()       
@@ -27,15 +27,27 @@ export class Component_Raumclient_View_Controlcenter extends ComponentBase {
         display: flex;
       }
 
+      .left {
+        flex: 1;
+        min-width: 20em;
+        max-width: 20em;
+        margin: auto;       
+      }
+
       </style>
 
-      <div class="container">        
-        Controllcenter
-        <component-raumclient-zoneselector></component-raumclient-zoneselector>
-        <div id="controlcenter_albumArtCover"></div>
+      <div class="container">
+        <div class="left">
+          <comp-raumclient-zoneselector id="controlcenter_zoneselector"></comp-raumclient-zoneselector>
+        </div>        
+        <!--<div id="controlcenter_albumArtCover"></div>-->
       </div>                    
     `
   }  
+
+  template(){
+    return Component_Raumclient_View_Controlcenter.template
+  }
 
   ready() {     
     this.isReady = true 

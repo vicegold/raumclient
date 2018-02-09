@@ -59,8 +59,8 @@ class AppRaumclient extends RaumkernelLib.Base
           self.initToolbar()
           self.initViewOverlay()
           self.initLogger()
-          self.initRaumkernel()
           self.initAppControlCenter()
+          self.initRaumkernel()          
           _resolve()
         }).catch(function(_err){
           _reject(_err)
@@ -157,7 +157,10 @@ class AppRaumclient extends RaumkernelLib.Base
       this.raumkernel.init()
       this.raumkernel.on("systemReady", function(_ready){        
           self.raumfeldSystemReadyStateChanged(_ready)          
-      });
+      })
+      this.raumkernel.on("combinedZoneStateChanged", function(_combinedZoneState){        
+        self.combinedZoneStateChanged(_combinedZoneState)          
+      })
     }
   
 
@@ -249,6 +252,12 @@ class AppRaumclient extends RaumkernelLib.Base
         this.hideViewOverlay()
       else
         this.showViewOverlay()
+    }
+
+
+    combinedZoneStateChanged(_combinedZoneState)
+    {
+      this.appControlCenter.combinedZoneStateChanged(_combinedZoneState)
     }
 
 

@@ -90,7 +90,7 @@ export class Component_Raumclient_ZoneSelector extends ComponentBase {
       var updatedZoneUDNs = new Array()      	
         
       // check if there are any zones available that we can draw or update
-      // if this is the case we run to each availabel zone
+      // if this is the case we run to each available zone
       if(this.zoneData.zones && this.zoneData.zones.length)
       {
         for(var i=0; i<this.zoneData.zones.length; i++)
@@ -112,7 +112,7 @@ export class Component_Raumclient_ZoneSelector extends ComponentBase {
             newZoneSelectorItemElement.setData(zone, this.zoneData.availableRooms)
             updatedZoneUDNs.push(newZoneSelectorItemElement.id.toString())
           }
-          // zone element is already there, wo only have to update the data of the element
+          // zone element is already there, we only have to update the data of the element
           else
           {                     
             zoneSelectorItemElement.setData(zone, this.zoneData.availableRooms)

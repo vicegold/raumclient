@@ -39,13 +39,10 @@ class AppRaumclient_ControlCenter extends RaumkernelLib.Base
     updateAlbumArtBackgroundView() 
     {
       app.getMusicArtistInfoFromApi("The Pretty Reckless").then(function(_data){
-        _data = _data
-
-        //_data.artist
-
+        _data = _data        //_data.artist
       })
-            
-      this.elementAlbumArtCover= "url('http://10.0.0.203:47366/raumfeldImage?albumId=Alb.55376000&album=Light%20Me%20Up&artist=The%20Pretty%20Reckless&service=Napster') no-repeat center center fixed"
+      //?albumId=19743285&album=Caravan%20Palace&artist=Caravan%20Palace&service=Tidal&width=800&height=800
+      this.elementAlbumArtCover= "url('http://10.0.0.203:47366/raumfeldImage?albumId=Alb.55376000&album=Light%20Me%20Up&artist=The%20Pretty%20Reckless&service=Napster&width=2000&height=2000') no-repeat center center fixed"
       this.elementAlbumArtCover = "cover"      
     }
     

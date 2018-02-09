@@ -25,11 +25,21 @@ class AppRaumclient extends RaumkernelLib.Base
       this.loggerWindow               = null
       this.raumkernel                 = null
       this.logger                     = null
+
+      // apis
+      this.apiMusicArtist             = new AppApiMusicArtist_LastFM()
+
+      // create app handlers for the different views
+      this.appControlCenter           = new AppRaumclient_ControlCenter()
+
+      // HTML elements
       this.elementToolbar             = null
       this.elementToolbarContainer    = null
       this.elementInspector           = null
       this.elementInspectorContainer  = null
       this.elementViewOverlay         = null
+
+      
     }
 
     additionalLogIdentifier()
@@ -50,6 +60,7 @@ class AppRaumclient extends RaumkernelLib.Base
           self.initViewOverlay()
           self.initLogger()
           self.initRaumkernel()
+          self.initAppControlCenter()
           _resolve()
         }).catch(function(_err){
           _reject(_err)
@@ -91,6 +102,12 @@ class AppRaumclient extends RaumkernelLib.Base
       })
     }
     
+
+    initAppControlCenter()
+    {
+      this.appControlCenter.init()       
+    }
+
 
     initElements()
     {
@@ -233,5 +250,14 @@ class AppRaumclient extends RaumkernelLib.Base
       else
         this.showViewOverlay()
     }
+
+
+    getMusicArtistInfoFromApi(_artist, _album)
+    {
+      var self = this
+      return new Promise(function(_resolve, _reject){
+        self.apiMusicArtist.getInfoApi({artist: _artist, album: _album}, _resolve, _reject)
+      })        
+    }     
     
 }

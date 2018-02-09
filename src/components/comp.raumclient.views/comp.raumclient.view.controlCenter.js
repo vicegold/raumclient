@@ -31,6 +31,8 @@ export class Component_Raumclient_View_Controlcenter extends ComponentBase {
 
       <div class="container">        
         Controllcenter
+        <component-raumclient-zoneselector></component-raumclient-zoneselector>
+        <div id="controlcenter_albumArtCover"></div>
       </div>                    
     `
   }  

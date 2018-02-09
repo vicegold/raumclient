@@ -46,5 +46,20 @@ export class ComponentBase extends PolymerElement {
     _element.style.display = _type
   }
 
+  error(_e) {  
+    var event = new CustomEvent("comp-error", _e)
+    document.dispatchEvent(event)
+  }
+
+  label(_label) {
+    //return label(_label)
+    //if ( app.label && typeof app.label === "function")   
+    return app.label(_label)
+    //if (label && typeof label === "function")  i
+    //77  return label(_label)
+    //return _label
+  }
+
+
 }
 

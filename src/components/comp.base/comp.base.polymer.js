@@ -52,9 +52,9 @@ export class ComponentBase extends PolymerElement {
   }
 
   label(_label) {
-    return label(_label)
+    //return label(_label)
     //if ( app.label && typeof app.label === "function")   
-      return app.label(_label)
+    return app.label(_label)
     //if (label && typeof label === "function")  i
     //77  return label(_label)
     //return _label

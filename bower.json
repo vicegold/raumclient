@@ -1,0 +1,19 @@
+{
+  "name": "raumclient",
+  "version": "0.0.1",
+  "homepage": "http://github.com/chrid/raumclient",
+  "description": "Raumfeld Desktop Player",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "overrides": {}
+}

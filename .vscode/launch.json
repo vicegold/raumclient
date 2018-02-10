@@ -9,7 +9,7 @@
             "type": "nwjs",
             "request": "launch",
             "name": "Launch NWJS",
-            "webRoot": "${workspaceFolder}\\src",
+            "webRoot": "${workspaceFolder}\\dist",
             "nwjsVersion" : "0.28.0"
         },
         {
@@ -17,14 +17,14 @@
             "request": "attach",
             "name": "Attach to Chrome",
             "port": 9222,
-            "webRoot": "${workspaceFolder}\\src",
+            "webRoot": "${workspaceFolder}\\dist",
             "nwjsVersion" : "0.28.0"
         },
         {
             "name": "Launch Chrome",
             "type": "chrome",
             "request": "launch",
-            "webRoot": "${workspaceRoot}\\src", //where you put your .js files
+            "webRoot": "${workspaceRoot}\\dist", //where you put your .js files
             "runtimeExecutable": "D:\\Develop\\NwJs\\bin\\nwjs-v0.28.0-win-x64\\nw.exe",
             "runtimeArgs": [
                 "${workspaceRoot}",

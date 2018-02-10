@@ -1,0 +1,27 @@
+{
+    "amd": true,
+    "src":  "./src",
+    "dest": "./dist/assets",
+    "directories": {
+        "fonts": "fonts",
+        "images": "images",
+        "scripts": "js",
+        "styles": "scss",
+        "svgsprites": "svgsprites"
+    },
+    "files": {
+        "fonts": ["**/*.{woff2,woff,svg,eot,ttf,otf}"],
+        "images": ["**/*.{png,jpg,jpeg,gif,svg}"],
+        "scripts": ["**/*.js"],
+        "styles": ["**/*.{scss,css}"],
+        "svgsprites": ["**/*.{svg,svgz}"]
+    },
+    "browserSync": {
+        "proxy": "raumclient.nwjs",
+        "watchForChange": "./dist/**/*.{html}",
+        "notify": false
+    },
+    "autoprefixer": {
+        "browsers": ["last 1 versions"]
+    }
+}

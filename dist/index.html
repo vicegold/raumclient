@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>raumclient</title>      
+    <title>raumclient</title>
     <link rel="stylesheet" href="css/layout.main.css">
     <link rel="stylesheet" href="css/app.animations.css">
   </head>
@@ -9,7 +9,7 @@
 
     <div class="mainContainer">
       <!-- toolbar container with a fixed width which contains some menues and some informations -->
-      <div class="toolbarContainer" id="toolbarContainer">        
+      <div class="toolbarContainer" id="toolbarContainer">
         <comp-raumclient-toolbar id="toolbar" windowstate="normal"></comp-raumclient-toolbar>
       </div>
       <!-- main container for the app and different views itself -->
@@ -23,21 +23,21 @@
       <div class="inspectorContainer" id="inspectorContainer">
         <comp-raumclient-inspector id="inspector"></comp-raumclient-inspector>
       </div>
-    </div>  
+    </div>
 
-    <script type='module' src='components/comp.base.view/comp.base.view.js'></script>  
-    <script type='module' src='components/comp.image/comp.image.js'></script> 
+    <script type='module' src='components/comp.base.view/comp.base.view.js'></script>
+    <script type='module' src='components/comp.image/comp.image.js'></script>
     <script type='module' src='components/comp.logviewer/comp.logviewer.js'></script>
     <script type='module' src='components/comp.loadingoverlay/comp.loadingoverlay.js'></script>
-    <script type='module' src='components/comp.music.nowPlaying/comp.music.nowPlaying.js'></script>    
-    <script type='module' src='components/comp.music.transitionControl/comp.music.transitionControl.js'></script>   
+    <script type='module' src='components/comp.music.nowPlaying/comp.music.nowPlaying.js'></script>
+    <script type='module' src='components/comp.music.transitionControl/comp.music.transitionControl.js'></script>
     <script type='module' src='components/comp.raumclient.toolbar/comp.raumclient.toolbar.js'></script>
-    <script type='module' src='components/comp.raumclient.inspector/comp.raumclient.inspector.js'></script>  
+    <script type='module' src='components/comp.raumclient.inspector/comp.raumclient.inspector.js'></script>
     <script type='module' src='components/comp.raumclient.zoneSelector/comp.raumclient.zoneSelector.js'></script>
     <script type='module' src='components/comp.raumclient.zoneSelector/comp.raumclient.zoneSelector.zoneItem.js'></script>
     <script type='module' src='components/comp.raumclient.zoneSelector/comp.raumclient.zoneSelector.zoneItem.room.js'></script>
-    <script type='module' src='components/comp.raumclient.views/comp.raumclient.view.controlCenter.js'></script>  
-    
+    <script type='module' src='components/comp.raumclient.views/comp.raumclient.view.controlCenter.js'></script>
+
     <script src='js/vendor/last.fm-api/lastfm.api.md5.js'></script>
     <script src='js/vendor/last.fm-api/lastfm.api.js'></script>
     <script src='js/vendor/last.fm-api/lastfm.api.cache.js'></script>
@@ -48,7 +48,7 @@
     <script src='js/app.raumclient.controlCenter.js'></script>
     <script src='js/app.raumclient.js'></script>
     <script>
-    
+
       var app = null
 
       // add global error catching before doeing anything fancy
@@ -69,14 +69,14 @@
           alert("Error loading localization: " + _e.toString() )
           app.quit()
         })
-      })  
-      
+      })
+
       // global label function
       function label(_label){
         return app.label(_label)
       }
 
-    </script> 
+    </script>
 
   </body>
 </html>
